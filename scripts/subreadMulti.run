@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH -n 8
+#SBATCH -t 0-22:00
+#SBATCH --mem=75000
+#SBATCH -p shared
+
+module load R/4.0.2-fasrc01
+
+export R_LIBS_USER=$HOME/apps/R_4.0.2:$R_LIBS_USER
+
+Rscript multi.Rscript
